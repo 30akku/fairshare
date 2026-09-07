@@ -19,7 +19,7 @@
 
     <properties>
         <java.version>21</java.version>
-        <springdoc.version>3.0.2</springdoc.version>
+        <springdoc.version>3.1.0</springdoc.version>
         <firebase-admin.version>9.7.0</firebase-admin.version>
         <testcontainers.version>1.21.3</testcontainers.version>
     </properties>
