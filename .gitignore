@@ -1,0 +1,29 @@
+# Java
+backend/target/
+*.class
+.m2-cache/
+
+# Flutter / Dart
+mobile/.dart_tool/
+mobile/.flutter-plugins
+mobile/.flutter-plugins-dependencies
+mobile/build/
+mobile/.packages
+mobile/android/.gradle/
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# Local configuration and secrets
+.env
+*.jks
+*.keystore
+firebase-service-account*.json
+mobile/android/key.properties
+mobile/android/app/google-services.json
+
+# OS files
+.DS_Store
+Thumbs.db

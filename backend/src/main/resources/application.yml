@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: fairshare-backend
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/fairshare}
+    username: ${DATABASE_USERNAME:fairshare}
+    password: ${DATABASE_PASSWORD:fairshare}
+    hikari:
+      maximum-pool-size: ${DB_POOL_SIZE:5}
+      minimum-idle: 0
+      connection-timeout: 30000
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+  jackson:
+    default-property-inclusion: non_null
+
+server:
+  port: ${PORT:8080}
+  forward-headers-strategy: framework
+  shutdown: graceful
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+fairshare:
+  auth:
+    dev-mode: ${AUTH_DEV_MODE:false}
+  public-base-url: ${PUBLIC_BASE_URL:http://localhost:8080}
+  maintenance-key: ${MAINTENANCE_KEY:change-me}
+  cloudinary:
+    cloud-name: ${CLOUDINARY_CLOUD_NAME:}
+    api-key: ${CLOUDINARY_API_KEY:}
+    api-secret: ${CLOUDINARY_API_SECRET:}
+

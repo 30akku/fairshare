@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: fairshare-api
+    runtime: docker
+    plan: free
+    rootDir: backend
+    healthCheckPath: /actuator/health/readiness
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_USERNAME
+        sync: false
+      - key: DATABASE_PASSWORD
+        sync: false
+      - key: FIREBASE_SERVICE_ACCOUNT_JSON
+        sync: false
+      - key: MAINTENANCE_KEY
+        generateValue: true
+      - key: PUBLIC_BASE_URL
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false

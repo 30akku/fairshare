@@ -1,0 +1,4 @@
+fairshare:
+  auth:
+    dev-mode: true
+
